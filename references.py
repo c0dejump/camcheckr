@@ -23,5 +23,3 @@ ref_exploits = {
 doc_links = {
         "Dahua Storm": "https://dahuawiki.com/"
     }
-
-basic_link = ["anony/mjpg.cgi", "html/previewindex.htm", "html/playbackindex.htm", "html/alarmindex.htm", "mnt/mtd/Config/"]
