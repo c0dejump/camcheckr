@@ -28,29 +28,45 @@ def define_cam(req, url, s):
         return True
         #function which resume if know exploit, links, tests...
     elif "Basic realm=\"netcam\"" in req.headers.values():
+        #netcam
         print("{}Netcam camera found".format(PLUS))
         list_links("Netcam")
         check_exploit()
         return True
     elif "index1.htm" in req.text:
+        #netwave
         req_netwave = s.get(url+"index1.htm")
         if "check_user.cgi" in req_netwave.text and "check_user.cgi" in req_netwave.text:
             print("{}Netwave camera found".format(PLUS))
             list_links("Netwave")
             check_exploit()
             return False
+    elif "L3gpp.htm" in req.text or "IDS_WEB_GUEST_LOGIN" in req.text and "IDS_WEB_REMEMBER_ID_PWD" in req.text:
+        #geovision
+        print("{}Geovision camera found".format(PLUS))
+        list_links("Geovision")
+        check_exploit()
+        return True
     else:
         url = "{}favicon.ico".format(url) if url[-1] == "/" else "{}/favicon.ico".format(url)
         r = s.get(url, verify=False)
         if r.status_code == 200:
+            fav_found = False
             favicon = codecs.encode(r.content,"base64")
             hash_fav = mmh3.hash(favicon)
+            #print(hash_fav)
             for fg in fingerprint:
                 if hash_fav == fg:
                     print("{}{} camera found".format(PLUS, fingerprint[fg]))
+                    fav_found = True
                     list_links(fingerprint[fg])
-            check_exploit()
+            if fav_found:
+                check_exploit()
+            else:
+                print("{}Camera type not found".format(LESS))
+                print(LINE)
             return True
         else:
             print("{}Camera type not found".format(LESS))
             print(LINE)
+            return True

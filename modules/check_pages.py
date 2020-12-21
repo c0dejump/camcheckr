@@ -26,4 +26,4 @@ def check_pages(url, s):
             sys.stdout.write("{}\r".format(pages.strip()))
             sys.stdout.flush()
     if not found:
-        print("{}Nothing page found".format(LESS))
+        print("\n{}Nothing page found".format(LESS))

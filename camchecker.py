@@ -7,6 +7,7 @@ import argparse
 from config import LINE, INFO, PLUS, WARNING
 from modules.define_cam import define_cam
 from modules.check_pages import check_pages
+import traceback
 
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
@@ -51,9 +52,10 @@ if __name__ == '__main__':
     url = results.url
     s = requests.session()
     try:
-        req = s.get(url, allow_redirects=True)
+        req = s.get(url, verify=False, allow_redirects=True,)
     except:
-        print("{}There are a problem with this IP, sorry but you should check to the hand")
+        print("{}There are a problem with this IP, sorry but you should check to the hand".format(WARNING))
+        sys.exit()
     stat  = req.status_code
 
 

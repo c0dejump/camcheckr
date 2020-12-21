@@ -62,4 +62,4 @@ cgi-bin/user/Config.cgi?.cab&action=get&category=Account.*
 cgi-bin/user/Config.cgi?/nobody&action=get&category=Account.*
 cgi-bin/cgibox
 cgi-bin/cgibox?.cab
-//proc/kcore
+/proc/kcore
