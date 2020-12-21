@@ -1,5 +1,7 @@
 # camchecker
 
+Tool for Reconnaissance on a web camera.
+
 ### Use
 
 >	 python3 camchecker.py -u http://url/   
