@@ -10,7 +10,7 @@ from modules.check_pages import check_pages
 
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
-def dlProgress(count, blockSize, totalSize):
+"""def dlProgress(count, blockSize, totalSize):
       percent = int(count*blockSize*100/totalSize)
       sys.stdout.write("%2d%%" % percent)
       sys.stdout.write("\b\b\b")
@@ -39,7 +39,7 @@ def exploit_two():
         dl = urllib.urlretrieve(exploit2, filename=data_two, reporthook=dlProgress)
     else:
         print("\033[33m[-] \033[0m exploit NOT")
-        print("\033[34m-\033[0m" * 30 + "\n")
+        print("\033[34m-\033[0m" * 30 + "\n")"""
 
 
 
