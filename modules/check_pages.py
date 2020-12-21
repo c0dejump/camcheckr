@@ -1,10 +1,11 @@
 import requests
-from config import PLUS, INFO, LINE, REDI
+from config import PLUS, INFO, LINE, REDI, LESS
 from requests.exceptions import Timeout
 
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
 def check_pages(url, s):
+	found = False
 	print("\n{} Testing known pages of cameras:\n".format(INFO))
 	with open("urls_cam.txt", "r+") as basic_link:
 		for pages in basic_link.readlines():
@@ -15,5 +16,9 @@ def check_pages(url, s):
 				traceback.print_exc()
 			if res.status_code in [301, 302]:
 				print("{}[{}] {}".format(REDI, res.status_code, url_page))
+				found = True
 			elif res.status_code not in [404, 403, 401, 503]:
 				print("{}[{}] {}".format(PLUS, res.status_code, url_page))
+				found = True
+	if not found:
+		print("{}Nothing page found".format(LESS))

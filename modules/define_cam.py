@@ -10,7 +10,7 @@ requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.
 def list_links(keyword):     
     for re in ref_exploits:
         if keyword == re:
-            print("{}Potential exploit found: {}".format(WARNING, ref_exploits[re]))
+            print("{}Exploit in reference found: {}".format(WARNING, ref_exploits[re]))
     #TODO: google dork for automatic search + check in directly exploit-db
     for doc in doc_links:
         if keyword == doc:
@@ -20,7 +20,8 @@ def list_links(keyword):
 def define_cam(req, url, s):
     if "avtech" in req.text or any(key in req.text for key in ["Any where", "Any where", "IP Surveillance for Your Life"]):
         print("{}AvTech camera found".format(PLUS))
-        list_links("avtech")
+        list_links("Avtech")
+        print(LINE)
         #function which resume if know exploit, links, tests...
     else:
         url = "{}favicon.ico".format(url) if url[-1] == "/" else "{}/favicon.ico".format(url)

@@ -53,3 +53,12 @@ cgi-bin/video.cgi?msubmenu=mjpg
 image/1.jpg
 cgi-bin/jpg/image.cgi
 cgi-bin/net_jpeg.cgi?ch=1
+live/mjpeg
+snapshot.cgi
+snapshot.jpg
+cgi-bin/nobody/Machine.cgi?action=get_capability
+cgi-bin/user/Config.cgi
+cgi-bin/user/Config.cgi?.cab&action=get&category=Account.*
+cgi-bin/user/Config.cgi?/nobody&action=get&category=Account.*
+cgi-bin/cgibox
+cgi-bin/cgibox?.cab
