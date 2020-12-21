@@ -1,5 +1,6 @@
 from config import LINE, INFO, PLUS, LESS, WARNING, DOC
 from references import ref_exploits, doc_links, fingerprint
+from modules.check_exploit import check_exploit
 import mmh3
 import codecs
 import requests
@@ -15,14 +16,27 @@ def list_links(keyword):
     for doc in doc_links:
         if keyword == doc:
             print("{}Documentation found: {}".format(DOC, doc_links[doc]))
+    print(LINE)
 
 
 def define_cam(req, url, s):
+    #print(req.headers)
     if "avtech" in req.text or any(key in req.text for key in ["Any where", "Any where", "IP Surveillance for Your Life"]):
         print("{}AvTech camera found".format(PLUS))
         list_links("Avtech")
-        print(LINE)
+        return True
         #function which resume if know exploit, links, tests...
+    elif "Basic realm=\"netcam\"" in req.headers.values():
+        print("{}Netcam camera found".format(PLUS))
+        list_links("Netcam")
+        return True
+    elif "index1.htm" in req.text:
+        req_netwave = s.get(url+"index1.htm")
+        if "check_user.cgi" in req_netwave.text and "check_user.cgi" in req_netwave.text:
+            print("{}Netwave camera found".format(PLUS))
+            list_links("Netwave")
+            check_exploit()
+            return False
     else:
         url = "{}favicon.ico".format(url) if url[-1] == "/" else "{}/favicon.ico".format(url)
         r = s.get(url, verify=False)

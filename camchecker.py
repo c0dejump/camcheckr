@@ -4,7 +4,7 @@
 import requests
 import os, sys
 import argparse
-from config import LINE, INFO, PLUS
+from config import LINE, INFO, PLUS, WARNING
 from modules.define_cam import define_cam
 from modules.check_pages import check_pages
 
@@ -50,17 +50,20 @@ if __name__ == '__main__':
                                      
     url = results.url
     s = requests.session()
-    req = s.get(url, allow_redirects=True)
+    try:
+        req = s.get(url, allow_redirects=True)
+    except:
+        print("{}There are a problem with this IP, sorry but you should check to the hand")
     stat  = req.status_code
 
 
     if stat not in [404, 503]:
-        print("\n{}[{}] {} URL found".format(PLUS, stat, url))
+        print("\n[{}] {} URL found".format(stat, url))
         print(LINE + "\n")
         print("{}Defining type of camera...\n".format(INFO))
-        define_cam(req, url, s)
-        check_pages(url, s)
-        #exploit_one()
+        dc = define_cam(req, url, s)
+        if dc:
+            check_pages(url, s)
     else:
         print("\033[41m [{}][-] URL not found \033[0m".format(stat))
 

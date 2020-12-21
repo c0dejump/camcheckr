@@ -17,9 +17,12 @@ fingerprint = {
 }
 
 ref_exploits = {
-        "Avtech":"https://www.exploit-db.com/exploits/40500"
+        "Avtech": "https://www.exploit-db.com/exploits/40500",
+        "Netcam": "Direct video URL/anony/mjpg.cgi",
+        "Netwave": "Full memory leak: URL//proc/kcore"
     }
 
 doc_links = {
-        "Dahua Storm": "https://dahuawiki.com/"
+        "Dahua Storm": "https://dahuawiki.com/",
+        "Netwave": "https://www.exploit-db.com/exploits/41236"
     }
