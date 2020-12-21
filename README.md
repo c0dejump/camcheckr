@@ -11,3 +11,7 @@ Tool for Reconnaissance on a web camera.
 	-h, --help  show this help message and exit  
 	-u URL      URL to scan [required]   
 
+### TODO
+
+- [ ] Multiple website
+- [ ] Known exploit (without impact the camera)

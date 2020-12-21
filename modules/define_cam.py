@@ -24,11 +24,13 @@ def define_cam(req, url, s):
     if "avtech" in req.text or any(key in req.text for key in ["Any where", "Any where", "IP Surveillance for Your Life"]):
         print("{}AvTech camera found".format(PLUS))
         list_links("Avtech")
+        check_exploit()
         return True
         #function which resume if know exploit, links, tests...
     elif "Basic realm=\"netcam\"" in req.headers.values():
         print("{}Netcam camera found".format(PLUS))
         list_links("Netcam")
+        check_exploit()
         return True
     elif "index1.htm" in req.text:
         req_netwave = s.get(url+"index1.htm")
@@ -47,7 +49,8 @@ def define_cam(req, url, s):
                 if hash_fav == fg:
                     print("{}{} camera found".format(PLUS, fingerprint[fg]))
                     list_links(fingerprint[fg])
-            print(LINE)
+            check_exploit()
+            return True
         else:
             print("{}Camera type not found".format(LESS))
             print(LINE)
