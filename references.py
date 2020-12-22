@@ -29,3 +29,7 @@ doc_links = {
         "Dahua Storm": "https://dahuawiki.com/",
         "Netwave": "https://www.exploit-db.com/exploits/41236"
     }
+
+default_password = {
+    "Avtech": "admin:admin"
+}

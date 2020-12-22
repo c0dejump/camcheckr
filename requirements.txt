@@ -1,3 +1,6 @@
 argparse
 requests
 mmh3
+signal
+subprocess
+urllib

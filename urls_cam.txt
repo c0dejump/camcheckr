@@ -63,3 +63,12 @@ cgi-bin/user/Config.cgi?/nobody&action=get&category=Account.*
 cgi-bin/cgibox
 cgi-bin/cgibox?.cab
 /proc/kcore
+snap.jpg?JpegCam=1
+snap.jpg?JpegSize=M
+snap.jpg?JpegSize=XL
+snap.jpg
+mjpeg?res=full&x0=0&y0=0&x1=100%&y1=100%&quality=12&doublescan=0
+tmp/snap.jpg
+get_params.cgi
+get_status.cgi
+/dev/rom0

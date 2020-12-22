@@ -13,8 +13,10 @@ Tool for Reconnaissance on a web camera.
 
 ### TODO
 
-- [ ] Multiple website
+- [ ] Multiple websites/IPs
+- [ ] Multi threading
 - [ ] Known exploit (without impact the camera)
+- [ ] Default password of the camera
 
 ### Cameras
 
@@ -38,4 +40,14 @@ Today the tool detect
 	motionEye  
 	Netwave  
 	Netcam  
+>
+
+### Vulnerabilities
+
+Today the tool found and can exploit these vulnerabilites
+
+>
+	/anony/mjpg.cgi
+	//proc/kcore
+
 >
