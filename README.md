@@ -1,6 +1,6 @@
 # camchecker
 
-Tool for Reconnaissance on a web camera.
+Tool for Reconnaissance on a webcam.
 
 ### Use
 

@@ -12,10 +12,12 @@ def check_pages(url, s):
         for pages in basic_link.readlines():
             url_page = "{}{}".format(url, pages.strip()) if url[-1] == "/" else "{}/{}".format(url, pages.strip())
             try:
-                res = s.head(url_page, verify=False, timeout=3, allow_redirects=False)
+                res = s.head(url_page, verify=False, timeout=6, allow_redirects=False)
+            except Timeout:
+                pass
             except Exception:
                 #traceback.print_exc()
-                res = s.get(url_page, verify=False, timeout=3, allow_redirects=False)
+                res = s.get(url_page, verify=False, timeout=6, allow_redirects=False)
                 #print("{}Error with this page: {}".format(LESS, url_page))
             if res.status_code in [301, 302]:
                 print("{}[{}] {}".format(REDI, res.status_code, url_page))
