@@ -1,6 +1,7 @@
 from config import LINE, INFO, PLUS, LESS, WARNING, DOC
 from references import ref_exploits, doc_links, fingerprint
 from modules.check_exploit import check_exploit
+from modules.default_password import default_password
 import mmh3
 import codecs
 import requests
@@ -24,7 +25,8 @@ def define_cam(req, url, s):
     if "avtech" in req.text or any(key in req.text for key in ["Any where", "Any where", "IP Surveillance for Your Life"]):
         print("{}AvTech camera found".format(PLUS))
         list_links("Avtech")
-        check_exploit()
+        default_password(camera)
+        check_exploit(camera, url, s)
         return True
         #function which resume if know exploit, links, tests...
     elif "Basic realm=\"netcam\"" in req.headers.values():
@@ -32,6 +34,7 @@ def define_cam(req, url, s):
         camera = "Netcam"
         print("{}Netcam camera found".format(PLUS))
         list_links(camera)
+        default_password(camera)
         check_exploit(camera, url, s)
         return True
     elif "index1.htm" in req.text:
@@ -41,6 +44,7 @@ def define_cam(req, url, s):
             camera = "Netwave"
             print("{}Netwave camera found".format(PLUS))
             list_links(camera)
+            default_password(camera)
             check_exploit(camera, url, s)
             return False
     elif "L3gpp.htm" in req.text or "IDS_WEB_GUEST_LOGIN" in req.text and "IDS_WEB_REMEMBER_ID_PWD" in req.text:
@@ -48,6 +52,14 @@ def define_cam(req, url, s):
         camera = "Geovision"
         print("{}Geovision camera found".format(PLUS))
         list_links(camera)
+        default_password(camera)
+        check_exploit(camera, url, s)
+        return True
+    elif "FoscamFlashPlayer.swf" in req.text or "IPCWebComponents.exe" in req.text:
+        camera = "FOSCAM"
+        print("{}FOSCAM camera found".format(PLUS))
+        list_links(camera)
+        default_password(camera)
         check_exploit(camera, url, s)
         return True
     else:
@@ -67,6 +79,7 @@ def define_cam(req, url, s):
                     camera_by_fav = fingerprint[fg]
             if fav_found:
                 check_exploit(camera_by_fav, url, s)
+                default_password(camera_by_fav)
             else:
                 print("{}Camera type not found".format(LESS))
                 print(LINE)

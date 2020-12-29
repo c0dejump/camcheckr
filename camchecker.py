@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 
 import requests
@@ -17,13 +17,9 @@ requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-u", help="URL to scan \033[31m[required]\033[0m", dest='url')
-    parser.add_argument("--http_auth", help="For test default password in http authentification", dest='http_auth', required=False, action='store_true')
-    parser.add_argument("--web_auth", help="For test default password in web authentification", dest='web_auth', required=False)
     results = parser.parse_args()
                                      
     url = results.url
-    http_auth = results.http_auth
-    web_auth = results.web_auth
 
     s = requests.session()
     try:
@@ -39,8 +35,6 @@ if __name__ == '__main__':
         print(LINE + "\n")
         print("{}Defining type of camera...\n".format(INFO))
         dc = define_cam(req, url, s)
-        if http_auth:
-            default_password(s)
         if dc:
             check_pages(url, s)
     else:

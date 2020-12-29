@@ -6,11 +6,11 @@ fingerprint = {
         -374235895: "Ossia (Provision SR)",
         -194439630: "Avtech",
         512590457: "Trendnet",
-        90066852: "JAWS Web Server",
-        768231242: "JAWS Web Server",
+        90066852: "JAWS",
+        768231242: "JAWS",
         -355305208: "D-Link",
-        -1654229048: "Vivotek",
         -1897829998: "D-Link",
+        -1654229048: "Vivotek",
         -1748763891: "INSTAR Full-HD",
         -1702769256: "Bosch Security Systems",
         -923693877: "motionEye",
@@ -20,16 +20,25 @@ fingerprint = {
 ref_exploits = {
         "Avtech": "https://www.exploit-db.com/exploits/40500",
         "Netcam": "Direct video URL/anony/mjpg.cgi",
-        "Netwave": "Full memory leak: URL//proc/kcore",
+        "Netwave": "\n - Full memory leak: URL//proc/kcore\n - https://www.exploit-db.com/exploits/41236",
         "HikVision": "\n - https://www.exploit-db.com/exploits/44328\n - https://packetstormsecurity.com/files/144097/Hikvision-IP-Camera-Access-Bypass.html",
-        "Geovision": "\n - https://www.exploit-db.com/exploits/43982\n - https://www.exploit-db.com/exploits/45065"
+        "Geovision": "\n - https://www.exploit-db.com/exploits/43982\n - https://www.exploit-db.com/exploits/45065",
+        "JAWS": "\n - https://www.exploit-db.com/exploits/25942\n - https://www.exploit-db.com/exploits/36216",
+        "FOSCAM": "https://www.exploit-db.com/exploits/27076"
     }
 
 doc_links = {
         "Dahua Storm": "https://dahuawiki.com/",
-        "Netwave": "https://www.exploit-db.com/exploits/41236"
     }
 
-default_password = {
-    "Avtech": "admin:admin"
+default_passwords = {
+    "Avtech": "admin:admin",
+    "HikVision": "admin:12345",
+    "AXIS": "root:pass",
+    "MOBOTIX": "admin:meinsm",
+    "Vivotek": "root:",
+    "Geovision": "admin:admin",
+    "JAWS": "admin:"
 }
+
+#default_input = {}

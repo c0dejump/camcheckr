@@ -11,12 +11,17 @@ Tool for Reconnaissance on a webcam.
 	-h, --help  show this help message and exit  
 	-u URL      URL to scan [required]   
 
+### Features:
+
+- [ ] Display default password of the camera    
+- [ ] Exploit different vulnerabilities (without impact the camera)     
+
 ### TODO
 
 - [ ] Multiple websites/IPs
 - [ ] Multi threading
 - [ ] Known exploit (without impact the camera)
-- [ ] Default password of the camera
+- [ ] Auto test default password of the camera
 
 ### Cameras
 
@@ -40,6 +45,7 @@ Today the tool detect
 	motionEye  
 	Netwave  
 	Netcam  
+	FOSCAM    
 >
 
 ### Vulnerabilities
@@ -47,7 +53,7 @@ Today the tool detect
 Today the tool found and can exploit these vulnerabilites
 
 >
-	/anony/mjpg.cgi
-	//proc/kcore
+	[Netcam] /anony/mjpg.cgi
+	[Netwave] //proc/kcore
 
 >
