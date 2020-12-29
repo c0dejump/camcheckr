@@ -79,3 +79,4 @@ videostream.cgi?resolution=8&rate=13
 videostream.cgi?rate=0
 cgi-bin/net_jpeg.cgi?ch=0
 log/syslog.txt
+app/main.js

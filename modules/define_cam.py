@@ -21,7 +21,7 @@ def list_links(keyword):
 
 
 def define_cam(req, url, s):
-    #print(req.headers)
+    #print([req.headers[r] for r in req.headers])
     if "avtech" in req.text or any(key in req.text for key in ["Any where", "Any where", "IP Surveillance for Your Life"]):
         print("{}AvTech camera found".format(PLUS))
         list_links("Avtech")
@@ -42,7 +42,7 @@ def define_cam(req, url, s):
         req_netwave = s.get(url+"index1.htm")
         if "check_user.cgi" in req_netwave.text and "check_user.cgi" in req_netwave.text:
             camera = "Netwave"
-            print("{}Netwave camera found".format(PLUS))
+            print("{}{} camera found".format(PLUS, camera))
             list_links(camera)
             default_password(camera)
             check_exploit(camera, url, s)
@@ -50,14 +50,21 @@ def define_cam(req, url, s):
     elif "L3gpp.htm" in req.text or "IDS_WEB_GUEST_LOGIN" in req.text and "IDS_WEB_REMEMBER_ID_PWD" in req.text:
         #geovision
         camera = "Geovision"
-        print("{}Geovision camera found".format(PLUS))
+        print("{}{} camera found".format(PLUS, camera))
         list_links(camera)
         default_password(camera)
         check_exploit(camera, url, s)
         return True
     elif "FoscamFlashPlayer.swf" in req.text or "IPCWebComponents.exe" in req.text:
         camera = "FOSCAM"
-        print("{}FOSCAM camera found".format(PLUS))
+        print("{}{} camera found".format(PLUS, camera))
+        list_links(camera)
+        default_password(camera)
+        check_exploit(camera, url, s)
+        return True
+    elif "TAS-Tech IPCam" in [req.headers[r] for r in req.headers]:
+        camera = "TAS-Tech"
+        print("{}{} camera found".format(PLUS, camera))
         list_links(camera)
         default_password(camera)
         check_exploit(camera, url, s)

@@ -24,10 +24,10 @@ def check_pages(url, s):
             if res.status_code in [301, 302]:
                 print("{}[{}] {}".format(REDI, res.status_code, url_page))
                 found = True
-            elif res.status_code not in [404, 403, 401, 503]:
+            elif res.status_code not in [404, 403, 401, 503, 307]:
                 print("{}[{}] {}".format(PLUS, res.status_code, url_page))
                 found = True
-            sys.stdout.write("{}  \r".format(pages.strip()))
+            sys.stdout.write("\033[34m {0:{1}} \033[0m\r".format(pages.strip(), len(pages.strip())))
             sys.stdout.flush()
     if not found:
         print("\n{}Nothing page found".format(LESS))

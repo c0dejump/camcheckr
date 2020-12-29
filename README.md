@@ -13,8 +13,8 @@ Tool for Reconnaissance on a webcam.
 
 ### Features:
 
-- [ ] Display default password of the camera    
-- [ ] Exploit different vulnerabilities (without impact the camera)     
+- [x] Display default password of the camera    
+- [x] Exploit different vulnerabilities (without impact the camera)     
 
 ### TODO
 
@@ -45,7 +45,12 @@ Today the tool detect
 	motionEye  
 	Netwave  
 	Netcam  
-	FOSCAM    
+	FOSCAM   
+	Domoticz     
+	Bbox   
+	Jeedom   
+	TAS-Tech   
+
 >
 
 ### Vulnerabilities
