@@ -43,7 +43,8 @@ default_passwords = {
     "Vivotek": "root:",
     "Geovision": "admin:admin",
     "JAWS": "admin:",
-    "TAS-Tech": "admin:admin"
+    "TAS-Tech": "admin:admin",
+    "Netcam": "root, admin:pass, admin",
 }
 
 #default_input = {}

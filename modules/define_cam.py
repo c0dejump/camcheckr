@@ -12,7 +12,7 @@ requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.
 def list_links(keyword):     
     for re in ref_exploits:
         if keyword == re:
-            print("{}Exploit in reference found: {}".format(WARNING, ref_exploits[re]))
+            print("{}Exploit in the reference found: {}".format(WARNING, ref_exploits[re]))
     #TODO: google dork for automatic search + check in directly exploit-db
     for doc in doc_links:
         if keyword == doc:
