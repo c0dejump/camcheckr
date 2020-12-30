@@ -40,11 +40,12 @@ default_passwords = {
     "HikVision": "admin:12345",
     "AXIS": "root:pass",
     "MOBOTIX": "admin:meinsm",
-    "Vivotek": "root:",
+    "Vivotek": "root:<blank>",
     "Geovision": "admin:admin",
-    "JAWS": "admin:",
+    "JAWS": "admin:<blank>",
     "TAS-Tech": "admin:admin",
     "Netcam": "root, admin:pass, admin",
+    "FOSCAM": "admin:<blank>",
 }
 
 #default_input = {}

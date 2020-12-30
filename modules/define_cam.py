@@ -23,8 +23,9 @@ def list_links(keyword):
 def define_cam(req, url, s):
     #print([req.headers[r] for r in req.headers])
     if "avtech" in req.text or any(key in req.text for key in ["Any where", "Any where", "IP Surveillance for Your Life"]):
-        print("{}AvTech camera found".format(PLUS))
-        list_links("Avtech")
+        camera = "AvTech"
+        print("{}{} camera found".format(PLUS, camera))
+        list_links(camera)
         default_password(camera)
         check_exploit(camera, url, s)
         return True
@@ -32,7 +33,7 @@ def define_cam(req, url, s):
     elif "Basic realm=\"netcam\"" in req.headers.values():
         #netcam
         camera = "Netcam"
-        print("{}Netcam camera found".format(PLUS))
+        print("{}{} camera found".format(PLUS, camera))
         list_links(camera)
         default_password(camera)
         check_exploit(camera, url, s)
