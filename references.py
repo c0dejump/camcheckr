@@ -18,6 +18,7 @@ fingerprint = {
         90680708: "Domoticz",
         1884959002: "Bbox",
         672786288: "Jeedom",
+        -520888198: "Blue Iris"
 }
 
 ref_exploits = {
@@ -48,4 +49,15 @@ default_passwords = {
     "FOSCAM": "admin:<blank>",
 }
 
-#default_input = {}
+login_page = {
+    "HikVision": "doc/page/login.asp",
+    "Geovision": "ssi.cgi/Login.htm"
+}
+
+input_creds = {
+    "Avtech":"username:password",
+    "Avtech":"Username:Password",
+    "HikVision": "username:password",
+    "Geovision": "username:password",
+
+}

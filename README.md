@@ -1,33 +1,33 @@
-# camchecker
+# camcheckr
 
 Tool for Reconnaissance on a webcam.
 
 ### Use
 
->	 python3 camchecker.py -u http://url/   
+>	 python3 camcheckr.py -u http://url/   
  
 	usage: camchecker.py [-h] [-u URL]   
 	optional arguments:  
 	-h, --help  show this help message and exit  
 	-u URL      URL to scan [required] 
 
-![cam](https://user-images.githubusercontent.com/29504335/103299663-506ff480-49fd-11eb-9652-e12d928b006d.PNG)
+![cam](https://user-images.githubusercontent.com/29504335/103356313-def17e00-4ab0-11eb-9d60-06cf9c2919fc.PNG)
 
 ### Features:
 
 - [x] Display default password of the camera    
-- [x] Exploit different vulnerabilities (without impact the camera)     
+- [x] Exploit different vulnerabilities (without impact the camera)   
+- [x] Multiple websites/IPs     
 
 ### TODO
 
-- [ ] Multiple websites/IPs
 - [ ] Multi threading
-- [ ] Known exploit (without impact the camera)
-- [ ] Auto test default password of the camera
+- [~] Known exploit (without impact the camera)
+- [~] Auto test default password of the camera
 
 ### Cameras
 
-Today the tool detect
+Today the tool support
 
 >
 	Hikvision  
@@ -76,5 +76,23 @@ Today the tool found and can exploit these vulnerabilites
 	- tmpfs/ddns.conf
 	- tmpfs/syslog.txt
 	- log/syslog.txt
+	[JAWS]
+	- jaws/libraries/pear/MDB2.php?file_name=data://text/plain;base64,RXhwbG9pdCBEYXRhVVJJIGluY2x1c2lvbg==  
+    - jaws/libraries/pear/MDB2.php?file_name=data://text/plain;base64,RXhwbG9pdCBEYXRhVVJJIGluY2x1c2lvbg==   
+    - jaws/libraries/pear/Services/Weather.php?service=data://text/plain;base64,RXhwbG9pdCBEYXRhVVJJIGluY2x1c2lvbg==   
+    - jaws/libraries/pear/SOAP/Transport.php?transport_include=data://text/plain;base64,RXhwbG9pdCBEYXRhVVJJIGluY2x1c2lvbg==   
+    - jaws/libraries/pear/Crypt/RSA/MathLoader.php?class_filename=data://text/plain;base64,RXhwbG9pdCBEYXRhVVJJIGluY2x1c2lvbg==   
 
 >
+
+### Default credentials
+
+Today the tool auto check these defaults credentials
+
+>
+	Avtech :
+		- admin:admin
+    HikVision: 
+    	- admin:12345
+    Geovision: 
+    	- admin:admin
