@@ -25,7 +25,7 @@ def list_links(keyword):
 
 def start_scan(camera, url, s, req):
     try:
-       if req.headers['Server']:
+        if req.headers['Server']:
             print("{}{} camera found\n  - Server: {}".format(PLUS, camera, req.headers['Server'].split(" ")[0]))
         else:
             print("{}{} camera found".format(PLUS, camera))
