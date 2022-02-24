@@ -24,10 +24,13 @@ def list_links(keyword):
 
 
 def start_scan(camera, url, s, req):
-    if req.headers['Server']:
-        print("{}{} camera found\n  - Server: {}".format(PLUS, camera, req.headers['Server'].split(" ")[0]))
-    else:
-        print("{}{} camera found".format(PLUS, camera))
+    try:
+       if req.headers['Server']:
+            print("{}{} camera found\n  - Server: {}".format(PLUS, camera, req.headers['Server'].split(" ")[0]))
+        else:
+            print("{}{} camera found".format(PLUS, camera))
+    except:
+        pass
     list_links(camera)
     default_password(camera, url, s)
     check_exploit(camera, url, s)
@@ -84,9 +87,12 @@ def define_cam(req, url, s):
             #print(hash_fav)
             for fg in fingerprint:
                 if hash_fav == fg:
-                    if req.headers['Server']:
-                       print("{}{} camera found\n  - Server: {}".format(PLUS, fingerprint[fg], req.headers['Server'].split(" ")[0])) 
-                    else:
+                    try:
+                        if req.headers['Server']:
+                            print("{}{} camera found\n  - Server: {}".format(PLUS, fingerprint[fg], req.headers['Server'].split(" ")[0])) 
+                        else:
+                            print("{}{} camera found".format(PLUS, fingerprint[fg]))
+                    except:
                         print("{}{} camera found".format(PLUS, fingerprint[fg]))
                     fav_found = True
                     list_links(fingerprint[fg])

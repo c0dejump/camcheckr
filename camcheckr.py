@@ -18,11 +18,12 @@ def main(url):
     """
     s = requests.session()
     try:
-        req = s.get(url, verify=False, allow_redirects=True, timeout=6)
+        req = s.get(url, verify=False, allow_redirects=True, timeout=15)
     except:
+        traceback.print_exc()
         print("{}There are a problem with this IP, sorry but you should check to the hand".format(WARNING))
         sys.exit()
-    stat  = req.status_code
+    stat = req.status_code
 
     if stat not in [404, 503]:
         print("\n\033[42m[+] [{}] {} URL found\033[0m".format(stat, url))

@@ -22,6 +22,7 @@ Tool for Reconnaissance on a webcam.
 ### TODO
 
 - [ ] Multi threading
+- [ ] Check camera in cvedetail
 - [~] Known exploit (without impact the camera)
 - [~] Auto test default password of the camera
 

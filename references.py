@@ -59,5 +59,4 @@ input_creds = {
     "Avtech":"Username:Password",
     "HikVision": "username:password",
     "Geovision": "username:password",
-
 }

@@ -10,18 +10,18 @@ def check_pages(url, s):
     found = False
     print("\n{} Testing known pages of cameras:\n".format(INFO))
     try:
-        url_res = s.get(url, verify=False, allow_redirects=False)
+        url_res = s.get(url, verify=False, allow_redirects=False, timeout=15)
     except:
-        url_res = s.head(url, verify=False, allow_redirects=False)
+        url_res = s.head(url, verify=False, allow_redirects=False, timeout=15)
     with open("urls_cam.txt", "r+") as basic_link:
         for pages in basic_link.readlines():
             url_page = "{}{}".format(url, pages.strip()) if url[-1] == "/" else "{}/{}".format(url, pages.strip())
             try:
-                res = s.head(url_page, verify=False, timeout=6, allow_redirects=False)
+                res = s.head(url_page, verify=False, timeout=15, allow_redirects=False)
             except:
                 #traceback.print_exc()
                 try:
-                    res = s.get(url_page, verify=False, timeout=6, allow_redirects=False)
+                    res = s.get(url_page, verify=False, timeout=15, allow_redirects=False)
                 #print("{}Error with this page: {}".format(LESS, url_page))
                 except (ConnectionError, Exception, Timeout):
                     pass
