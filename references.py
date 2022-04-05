@@ -29,6 +29,7 @@ ref_exploits = {
         "Geovision": "\n - https://www.exploit-db.com/exploits/43982\n - https://www.exploit-db.com/exploits/45065",
         "JAWS": "\n - https://www.exploit-db.com/exploits/25942\n - https://www.exploit-db.com/exploits/36216",
         "FOSCAM": "https://www.exploit-db.com/exploits/27076",
+        "Dahua Storm" : "https://vulners.com/zdt/1337DAY-ID-36859"
     }
 
 doc_links = {
@@ -45,8 +46,9 @@ default_passwords = {
     "Geovision": "admin:admin",
     "JAWS": "admin:<blank>",
     "TAS-Tech": "admin:admin",
-    "Netcam": "root, admin:pass, admin",
+    "Netcam": "root:pass, admin:pass, admin:<blank>",
     "FOSCAM": "admin:<blank>",
+    "Dahua Storm": "admin:admin, default:default, 888888:888888, 666666:666666"
 }
 
 login_page = {
@@ -59,4 +61,5 @@ input_creds = {
     "Avtech":"Username:Password",
     "HikVision": "username:password",
     "Geovision": "username:password",
+    "Dahua Storm": "username:password"
 }

@@ -28,7 +28,7 @@ def check_pages(url, s):
             try:
                 if len(res.content) not in range(len(url_res.content) - 50, len(url_res.content) + 50) or url_res.headers["Content-Length"] != res.headers["Content-Length"]:
                     if res.status_code in [301, 302]:
-                        print("{}[{}] {}".format(REDI, res.status_code, url_page))
+                        print("{}[{}] {} > {}".format(REDI, res.status_code, url_page, res.headers['location']))
                         found = True
                     elif res.status_code not in [404, 403, 401, 503, 307, 304, 501]:
                         print("{}[{}] {}".format(PLUS, res.status_code, url_page))
