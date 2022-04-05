@@ -12,6 +12,7 @@ mnt/mtd/Config/
 zconf/service.xmlcgi/ieng/
 cgi-bin/guestimage.html
 control/userimage.html
+control/player
 mjpg/video.mjpg
 cgi/jpg/image.cgi
 cgi/mjpg/mjpeg.cgi
@@ -80,3 +81,7 @@ videostream.cgi?rate=0
 cgi-bin/net_jpeg.cgi?ch=0
 log/syslog.txt
 app/main.js
+imageset.htm
+view/view.shtml
+view/index.shtml
+view/view.shtml?imagePath=/mjpg/video.mjpg&size=1
