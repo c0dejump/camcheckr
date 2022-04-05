@@ -28,8 +28,8 @@ ref_exploits = {
         "HikVision": "\n - https://www.exploit-db.com/exploits/44328\n - https://packetstormsecurity.com/files/144097/Hikvision-IP-Camera-Access-Bypass.html",
         "Geovision": "\n - https://www.exploit-db.com/exploits/43982\n - https://www.exploit-db.com/exploits/45065",
         "JAWS": "\n - https://www.exploit-db.com/exploits/25942\n - https://www.exploit-db.com/exploits/36216",
-        "FOSCAM": "https://www.exploit-db.com/exploits/27076",
-        "Dahua Storm" : "https://vulners.com/zdt/1337DAY-ID-36859"
+        "FOSCAM": " - https://www.exploit-db.com/exploits/27076",
+        "Dahua Storm" : " - https://vulners.com/zdt/1337DAY-ID-36859\n - https://github.com/mcw0/PoC/blob/master/dahua-backdoor-PoC.py"
     }
 
 doc_links = {

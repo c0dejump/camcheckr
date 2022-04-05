@@ -85,3 +85,4 @@ imageset.htm
 view/view.shtml
 view/index.shtml
 view/view.shtml?imagePath=/mjpg/video.mjpg&size=1
+current_config/passwd
